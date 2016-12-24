@@ -1,0 +1,21 @@
+<div class="tab-pane" id="panel-232324" ng-controller="neihanCrtl">
+	<div class="col-lg-6" style="margin:10px 0;">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model="searchName" placeholder="搜索一下">
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="button" ng-click="clearVal()">
+					清空
+				</button>
+			</span>
+		</div>
+		<!-- /input-group -->
+	</div>
+	<div class="col-md-12" ng-repeat="detail in details|filter:searchName">
+		<div class="thumbnail">
+			<a ui-sref='smilemore({id:{{detail.id|getNumber}}})' class="list-group-item">{{detail.title}}<span class="glyphicon glyphicon-road" style="float:right;"></span></a>
+		</div>
+	</div>
+	<button type="button" class="btn btn-primary" style="margin-right:5%;margin-bottom: 10px;float:right;" ng-click="loadMore()"> 
+	加载更多>>
+	</button>
+</div>
